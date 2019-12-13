@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Milk #<%= @milk.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/milks" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link milk start -->
+      <div class="col">
+        <a href="/milks/<%= @milk.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit milk
+        </a>
+      </div>
+      <!-- Edit link milk end -->
+
+      <!-- Delete link milk start -->
+      <div class="col">
+        <a href="/delete_milk/<%= @milk.id %>" class="btn btn-block btn-outline-secondary">
+          Delete milk
+        </a>
+      </div>
+      <!-- Delete link milk end -->
+    </div>
+
+    <dl>
+      <dt>
+        User
+      </dt>
+      <!-- Display user_id start -->
+      <dd>
+        <%= @milk.user_id %>
+      </dd>
+      <!-- Display user_id end -->
+
+      <dt>
+        Date milk expires
+      </dt>
+      <!-- Display date_milk_expires start -->
+      <dd>
+        <%= @milk.date_milk_expires %>
+      </dd>
+      <!-- Display date_milk_expires end -->
+
+      <dt>
+        Description
+      </dt>
+      <!-- Display description start -->
+      <dd>
+        <%= @milk.description %>
+      </dd>
+      <!-- Display description end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@milk.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@milk.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

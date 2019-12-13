@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @milk.present? %>
+  <% if @milk.errors.any? %>
+    <% @milk.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new milk
+</h1>
+
+
+<hr>
+
+<!-- Form milk start -->
+<form action="/create_milk" method="post">
+<!-- Form milk end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @milk.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for date_milk_expires start -->
+  <div class="form-group">
+    <label for="date_milk_expires">
+      Date milk expires
+    </label>
+
+    <!-- Input for date_milk_expires start -->
+    <input type="text" id="date_milk_expires" name="date_milk_expires" class="form-control" value="<%= @milk.date_milk_expires %>">
+    <!-- Input for date_milk_expires end -->
+  </div>
+  <!-- Label and input for date_milk_expires end -->
+
+  <!-- Label and input for description start -->
+  <div class="form-group">
+    <label for="description">
+      Description
+    </label>
+
+    <!-- Input for description start -->
+    <textarea id="description" name="description" class="form-control" rows="3"><%= @milk.description %></textarea>
+    <!-- Input for description end -->
+  </div>
+  <!-- Label and input for description end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create milk
+  </button>
+</form>
+
+<hr>
+
+<a href="/milks">
+  Go back
+</a>
