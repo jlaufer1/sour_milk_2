@@ -13,17 +13,21 @@
 
       <!-- Edit link milk start -->
       <div class="col">
-        <a href="/milks/<%= @milk.id %>/edit" class="btn btn-block btn-outline-secondary">
-          Edit milk
-        </a>
+        <% if current_user == @milk.user %>
+          <a href="/milks/<%= @milk.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
+            Edit milk
+          </a>
+        <% end %>
       </div>
       <!-- Edit link milk end -->
 
       <!-- Delete link milk start -->
       <div class="col">
-        <a href="/delete_milk/<%= @milk.id %>" class="btn btn-block btn-outline-secondary">
-          Delete milk
-        </a>
+        <% if current_user == @milk.user %>
+          <a href="/delete_milk/<%= @milk.id %>" class="btn btn-block btn-sm btn-outline-secondary">
+            Delete milk
+          </a>
+        <% end %>
       </div>
       <!-- Delete link milk end -->
     </div>
