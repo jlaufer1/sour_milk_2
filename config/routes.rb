@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "milks#index"
   # Routes for the Milk resource:
 
   # CREATE
