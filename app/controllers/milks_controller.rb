@@ -42,7 +42,7 @@ class MilksController < ApplicationController
   def update_row
     @milk = Milk.find(params.fetch("id_to_modify"))
 
-    @milk.user_id = params.fetch("user_id")
+    
     @milk.date_milk_expires = params.fetch("date_milk_expires")
     @milk.description = params.fetch("description")
 
