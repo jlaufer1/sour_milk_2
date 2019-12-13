@@ -55,6 +55,14 @@ class MilksController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @milk = Milk.find(params.fetch("id_to_remove"))
+
+    @milk.destroy
+
+    redirect_to("/users/#{@milk.user_id}", notice: "Milk deleted successfully.")
+  end
+
   def destroy_row
     @milk = Milk.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Milks
+
+    <a data-toggle="collapse" href="#user_milks_new_form">
+      Add milk
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.milks.each do |milk| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/milks/<%= milk.id %>">
+          <%= milk.user_id %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>
