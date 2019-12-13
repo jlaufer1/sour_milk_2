@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form milk start -->
 <form action="/create_milk" method="post">
-<!-- Form milk end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for date_milk_expires start -->
   <div class="form-group">
     <label for="date_milk_expires">
       Date milk expires
     </label>
 
-    <!-- Input for date_milk_expires start -->
     <input type="text" id="date_milk_expires" name="date_milk_expires" class="form-control">
-    <!-- Input for date_milk_expires end -->
   </div>
-  <!-- Label and input for date_milk_expires end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <label for="description">
       Description
     </label>
 
-    <!-- Input for description start -->
     <textarea id="description" name="description" class="form-control" rows="3"></textarea>
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create milk

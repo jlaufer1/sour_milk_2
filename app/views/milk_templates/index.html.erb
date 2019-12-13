@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "milk_templates/milks_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,13 +54,10 @@
 
       <% @milks.each do |milk| %>
       <tr>
-        <!-- Display milk.id start -->
         <td>
           <%= milk.id %>
         </td>
-        <!-- Display milk.id end -->
 
-        <!-- Display milk.user_id start -->
         <td>
           <% if milk.user.present? %>
             <a href="/users/<%= milk.user.id %>">
@@ -72,31 +65,22 @@
             </a>
           <% end %>
         </td>
-        <!-- Display milk.user_id end -->
 
-        <!-- Display milk.date_milk_expires start -->
         <td>
           <%= milk.date_milk_expires %>
         </td>
-        <!-- Display milk.date_milk_expires end -->
 
-        <!-- Display milk.description start -->
         <td>
           <%= milk.description %>
         </td>
-        <!-- Display milk.description end -->
 
-        <!-- Display milk.created_at start -->
         <td>
           <%= time_ago_in_words(milk.created_at) %> ago
         </td>
-        <!-- Display milk.created_at end -->
 
-        <!-- Display milk.updated_at start -->
         <td>
           <%= time_ago_in_words(milk.updated_at) %> ago
         </td>
-        <!-- Display milk.updated_at end -->
 
         <td>
           <a href="/milks/<%= milk.id %>">

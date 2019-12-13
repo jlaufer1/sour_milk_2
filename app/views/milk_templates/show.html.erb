@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link milk start -->
       <div class="col">
         <% if current_user == @milk.user %>
           <a href="/milks/<%= @milk.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link milk end -->
 
-      <!-- Delete link milk start -->
       <div class="col">
         <% if current_user == @milk.user %>
           <a href="/delete_milk/<%= @milk.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,14 +26,12 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link milk end -->
     </div>
 
     <dl>
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @milk.user.present? %>
           <a href="/users/<%= @milk.user_id %>">
@@ -44,46 +39,35 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Date milk expires
       </dt>
-      <!-- Display date_milk_expires start -->
       <dd>
         <%= @milk.date_milk_expires %>
       </dd>
-      <!-- Display date_milk_expires end -->
 
       <dt>
         Description
       </dt>
-      <!-- Display description start -->
       <dd>
         <%= @milk.description %>
       </dd>
-      <!-- Display description end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@milk.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@milk.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->
