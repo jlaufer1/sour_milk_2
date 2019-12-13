@@ -10,7 +10,7 @@ class MilksController < ApplicationController
   end
 
   def index
-    @milks = Milk.all
+    @milks = current_user.milks.page(params[:page]).per(10)
 
     render("milk_templates/index.html.erb")
   end
