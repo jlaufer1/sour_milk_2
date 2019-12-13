@@ -62,7 +62,11 @@
 
         <!-- Display milk.user_id start -->
         <td>
-          <%= milk.user.email %>
+          <% if milk.user.present? %>
+            <a href="/users/<%= milk.user.id %>">
+              <%= milk.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display milk.user_id end -->
 
