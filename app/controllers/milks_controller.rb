@@ -10,7 +10,8 @@ class MilksController < ApplicationController
   end
 
   def index
-    @milks = current_user.milks.page(params[:page]).per(10)
+    @q = current_user.milks.ransack(params[:q])
+    @milks = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("milk_templates/index.html.erb")
   end
